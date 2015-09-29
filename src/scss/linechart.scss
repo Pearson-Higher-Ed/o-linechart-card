@@ -1,0 +1,106 @@
+/* SVG Styles */
+
+span.chartcard > svg {
+  font-family: Arial;
+}
+
+span.chartcard > svg > g > text.header {
+  font-weight: bold;
+}
+
+span.chartcard > svg > g > text.subheader {
+  fill: grey;
+}
+
+span.chartcard > svg > g > text.percent {
+  font-weight: bold;
+}
+
+span.chartcard > svg > g > line.yGuide {
+  stroke: silver;
+}
+
+span.chartcard > svg > g > line.xGuide {
+  stroke: silver;
+}
+
+span.chartcard > svg > g > text.xLabel {
+  font-size: 9pt;
+  stroke: silver;
+}
+
+span.chartcard > svg > g > path.line {
+  stroke-width: 2;
+  fill: none;
+  stroke: dimgray;
+}
+
+span.chartcard > svg > g > circle.datapoint {
+  fill: dimgray;
+  stroke: white;
+  stroke-width: 3px;
+}
+
+
+/* Tooltip Styles */
+span.chartcard > div.tooltip {
+  margin: 0;
+	font: inherit;
+	vertical-align: baseline;
+  visibility : hidden;
+  background-color : lavender;
+  padding : 10px;
+  font-family : arial;
+  font-weight : bold;
+  font-size : 20px;
+  text-align : right;
+  position : absolute;
+	border: 1px solid #666;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+}
+
+span.chartcard > div.tooltip:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 50px;
+	top: 66px;
+	border: 10px solid;
+	border-color: #666 #666  transparent transparent;
+}
+
+span.chartcard > div.tooltip:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 51px;
+	top: 66px;
+	border: 9px solid;
+	border-color: lavender lavender transparent transparent ;
+}
+
+span.chartcard > div.tooltip > h1.week {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  color: slategrey;
+}
+
+span.chartcard > div.tooltip > p.percent {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
