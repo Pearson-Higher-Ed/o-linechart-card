@@ -3,7 +3,7 @@
 ## Use
 
 To use, create a new instance of the card, passing in the DOM target and a JSON configuration payload, in the format:
-`new lineChart([targetDomElement], [JsonPayload]);`
+	new lineChart([targetDomElement], [JsonPayload]);
 
 Where the targetDomElement is the DOM element where the card will be inserted,
 and and JsonPayload is a JSON object containing the following parameters:
@@ -24,8 +24,8 @@ and and JsonPayload is a JSON object containing the following parameters:
 * floorC (optional, default is 70): Any datapoint between this value and the floorB value will be yellow. Only used if useDataColors is true.
 * floorD (optional, default is 60): Any datapoint between this value and the floorC value will be orange, and any datapoint below this value will be red. Only used if useDataColors is true.
 
-### Example HTML
-	`<div id="chart"></div>
+### Example HTML:
+	<div id="chart"></div>
 	<script>
 			var lineChart = require("../../main");
       new lineChart("#chart", {
@@ -43,14 +43,14 @@ and and JsonPayload is a JSON object containing the following parameters:
         floorC: 70,
         floorD: 60
       });
-	</script>`
+	</script>
 
 ### Quick-start (to see the demo)
 This card uses [Origami Build Tools](https://github.com/Financial-Times/origami-build-tools)
 
 To run the demo:
-`origami-build-tools install
-origami-build-tools build
-origami-build-tools demo --runServer --watch`
+	origami-build-tools install
+	origami-build-tools build
+	origami-build-tools demo --runServer --watch
 
 The page will now be available locally, probably at (http://localhost:8080/demos/local/demo.html)
