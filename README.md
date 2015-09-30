@@ -18,6 +18,7 @@ and and JsonPayload is a JSON object containing the following parameters:
 * **subheader** (required): The subheader text to be displayed below the header
 * **tooltipText** (required): How to describe the second-to-last item in the data set (eg, "Last weeks grade," or "second coldest day")
 * **xLabel** (required): How the data is broken up. For example, if the data is grade by week, xLabel would be "week"
+* **units** (optional, default is empty): Indicates what measurement the data (y axis) was taken in, for example, "%"
 * **ceiling** (optional, default is "soft"): Can be a number, "soft." If a number, this will be the max value on the Y axis. if "soft", the chart will caclulate the max Y value from the data.
 * **floor** (optional, default is "soft"): Like "ceiling," above, but for the minimum Y value.  
 * **useDataColors** (optional, default is false): if true, mouseover colors will be calculated based on the floor cutoff numbers, below. If false, all numbers and mouseovers will be black
@@ -39,6 +40,7 @@ See /demos/ for a complete example
     subheader: "Cumulative"
     tooltipText: "Last Week",
     xLabel: "Week",
+    units: "%",
     ceiling: 100,
     floor: "soft",
     useDataColors: true,

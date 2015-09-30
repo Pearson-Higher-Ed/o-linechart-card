@@ -10,6 +10,7 @@ module.exports = function() {
       subheader,
       tooltipText,
       xLabel,
+      units,
       ceiling,
       floor,
       useDataColors,
@@ -75,7 +76,7 @@ module.exports = function() {
       tooltip.style.visibility = "visible";
       tooltipWeek.innerHTML = data.length === index + 1 ? "Last Week" : "Week " + (1 + index);
       tooltipPercent.style.color = getColor(data[index]);
-      tooltipPercent.innerHTML = data[index] + "%";
+      tooltipPercent.innerHTML = data[index] + "" + units;
 
       var matrix = t.getScreenCTM().translate(+t.getAttribute("cx"), +t.getAttribute("cy"));
 
@@ -104,15 +105,15 @@ module.exports = function() {
 
     // Tooltips
     var tooltip = document.createElement("div");
-    tooltip.setAttribute("class", "tooltip");
+    tooltip.setAttribute("class", "chartcard__tooltip");
     container.appendChild(tooltip);
 
     var tooltipWeek = document.createElement("h1");
-    tooltipWeek.setAttribute("class", "week");
+    tooltipWeek.setAttribute("class", "chartcard__tooltip__week");
     tooltip.appendChild(tooltipWeek);
 
     var tooltipPercent = document.createElement("p");
-    tooltipPercent.setAttribute("class", "percent");
+    tooltipPercent.setAttribute("class", "chartcard__tooltip__percent");
     tooltip.appendChild(tooltipPercent);
 
     // Create the SVG element
@@ -127,7 +128,7 @@ module.exports = function() {
 
     // Headers
     var headerNode = createSVGElement("text");
-    headerNode.setAttribute("class", "header");
+    headerNode.setAttribute("class", "chartcard__header");
     headerNode.setAttribute("x", margin / 2);
     headerNode.setAttribute("y", height * -0.9);
     headerNode.setAttribute("text-anchor", "right");
@@ -136,7 +137,7 @@ module.exports = function() {
     g.appendChild(headerNode);
 
     var subheaderNode = createSVGElement("text");
-    subheaderNode.setAttribute("class", "subheader");
+    subheaderNode.setAttribute("class", "chartcard__subheader");
     subheaderNode.setAttribute("x", margin / 2);
     subheaderNode.setAttribute("y", height * -0.84);
     subheaderNode.setAttribute("text-anchor", "right");
@@ -145,19 +146,19 @@ module.exports = function() {
     g.appendChild(subheaderNode);
 
     var percentNode = createSVGElement("text");
-    percentNode.setAttribute("class", "percent");
+    percentNode.setAttribute("class", "chartcard__percent");
     percentNode.setAttribute("x", margin / 2);
     percentNode.setAttribute("y", height * -0.62);
     percentNode.setAttribute("text-anchor", "right");
     percentNode.style.fontSize = (fontMultiplier / 4) + "px";
     percentNode.style.fill = getColor(thisWeek);
-    percentNode.textContent = thisWeek + "%";
+    percentNode.textContent = thisWeek + "" + units;
     g.appendChild(percentNode);
 
     // Guidelines
     for (var i = 0; i <= data.length; i++) {
       var yGuidei = createSVGElement("line");
-      yGuidei.setAttribute("class", "yGuide");
+      yGuidei.setAttribute("class", "chartcard__guidelines");
       yGuidei.setAttribute("x1", x(i));
       yGuidei.setAttribute("x2", x(i));
       yGuidei.setAttribute("y1", y(yCeil));
@@ -171,7 +172,7 @@ module.exports = function() {
       if (i === 2) var yVal = yFloor;
 
       var xGuidei = createSVGElement("line");
-      xGuidei.setAttribute("class", "xGuide");
+      xGuidei.setAttribute("class", "chartcard__guidelines");
       xGuidei.setAttribute("x1", margin * 2);
       xGuidei.setAttribute("x2", width - margin);
       xGuidei.setAttribute("y1", y(yVal));
@@ -179,7 +180,7 @@ module.exports = function() {
       g.appendChild(xGuidei);
 
       var xLabeli= createSVGElement("text");
-      xLabeli.setAttribute("class", "xLabel")
+      xLabeli.setAttribute("class", "chartcard__xLabel")
       xLabeli.setAttribute("x", 20);
       xLabeli.setAttribute("y", y(yVal));
       xLabeli.setAttribute("text-anchor", "left");
@@ -190,14 +191,14 @@ module.exports = function() {
 
     // Line path
     var path = createSVGElement("path");
-    path.setAttribute("class", "line");
+    path.setAttribute("class", "chartcard__datapath");
     path.setAttribute("d", getPath());
     g.appendChild(path);
 
     // Circles
     for (i = 0; i < data.length; i++) {
       var circle = createSVGElement("circle");
-      circle.setAttribute("class", "datapoint")
+      circle.setAttribute("class", "chartcard__datapoint")
       circle.setAttribute("cx", x(i));
       circle.setAttribute("cy", y(data[i]));
       circle.setAttribute("r", dataPointSize);
@@ -242,6 +243,12 @@ module.exports = function() {
   chart.xLabel = function(value) {
     if (!arguments.length) return xLabel;
     xLabel = value;
+    return chart;
+  }
+
+  chart.units = function(value) {
+    if (!arguments.length) return units;
+    units = value;
     return chart;
   }
 

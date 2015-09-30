@@ -47,8 +47,9 @@ function lineChartCard(element, params) {
       subheader = params.subheader ? params.subheader : "",
       tooltipText = params.tooltiptext ? params.tooltiptext : "",
       xLabel = params.xlabel ? params.xlabel : "",
-      ceiling = (params.ceiling ? params.ceiling : "soft"),
-      floor = (params.floor ? params.floor : "soft"),
+      units = params.units ? params.units : "",
+      ceiling = parseInt(params.ceiling) !== NaN ? parseInt(params.ceiling) : "soft",
+      floor = parseInt(params.floor) !== NaN ? parseInt(params.floor) : "soft",
       useDataColors = params.useDataColors,
       floorA = parseInt(params.floorA) !== NaN ? parseInt(params.floorA) : 90,
       floorB = parseInt(params.floorB) !== NaN ? parseInt(params.floorB) : 80,
@@ -62,6 +63,7 @@ function lineChartCard(element, params) {
     .subheader(subheader)
     .tooltipText(tooltipText)
     .xLabel(xLabel)
+    .units(units)
     .ceiling(ceiling)
     .floor(floor)
     .useDataColors(useDataColors)
