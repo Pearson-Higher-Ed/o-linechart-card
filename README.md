@@ -1,4 +1,4 @@
-# o-linechartcard [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/o-linechart-card.svg)](https://travis-ci.org/Pearson-Higher-Ed/o-linechart-card)
+# o-linechart-card [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/o-linechart-card.svg)](https://travis-ci.org/Pearson-Higher-Ed/o-linechart-card)
 
 ## Use
 
