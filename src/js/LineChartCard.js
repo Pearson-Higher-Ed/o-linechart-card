@@ -56,6 +56,14 @@ function lineChartCard(element, params) {
       floorC = parseInt(params.floorC) !== NaN ? parseInt(params.floorC) : 70,
       floorD = parseInt(params.floorD) !== NaN ? parseInt(params.floorD) : 60;
 
+
+  var chartDiv = document.createElement("div"); // The element the linechart will append itself to
+  chartDiv.className = "o-linechart";
+
+  this.card = document.createElement("div"); // The element which will be inserted into the consuming page
+  this.card.className = "o-card o-card--" + params.size;
+  this.card.appendChild(chartDiv);
+
   var chart = lineChart()
     .height(height)
     .width(width)
@@ -72,7 +80,9 @@ function lineChartCard(element, params) {
     .floorC(floorC)
     .floorD(floorD);
 
-  chart(data, element);
+  chart(data, chartDiv);
+
+  element.appendChild(this.card);
 
 }
 
