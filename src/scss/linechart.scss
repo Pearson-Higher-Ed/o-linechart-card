@@ -1,0 +1,38 @@
+/* SVG Styles */
+
+.chartcard {
+  font-family: Arial;
+
+  &__header {
+    font-weight: bold;
+  }
+
+  &__subheader {
+    fill: grey;
+  }
+
+  &__percent {
+    font-weight: bold;
+  }
+
+  &__guidelines {
+    stroke: silver;
+  }
+
+  &__xLabel {
+    font-size: 9pt;
+    stroke: silver;
+  }
+
+  &__datapath {
+    stroke-width: 2;
+    fill: none;
+    stroke: dimgray;
+  }
+
+  &__datapoint {
+    fill: dimgray;
+    stroke: white;
+    stroke-width: 3px;
+  }
+}

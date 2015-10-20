@@ -1,0 +1,62 @@
+/* Tooltip Styles */
+.chartcard__tooltip {
+  margin: 0;
+  font: inherit;
+  vertical-align: baseline;
+  visibility : hidden;
+  background-color : lavender;
+  padding : 10px;
+  font-family : arial;
+  font-weight : bold;
+  font-size : 20px;
+  text-align : right;
+  position : absolute;
+  border: 1px solid #666;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+
+  &:before {
+  	content: ' ';
+  	position: absolute;
+  	width: 0;
+  	height: 0;
+  	left: 50px;
+  	top: 66px;
+  	border: 10px solid;
+  	border-color: #666 #666  transparent transparent;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 51px;
+    top: 66px;
+    border: 9px solid;
+    border-color: lavender lavender transparent transparent ;
+  }
+
+  &__week {
+    margin: 0;
+  	padding: 0;
+  	border: 0;
+  	font-size: 100%;
+  	font: inherit;
+  	vertical-align: baseline;
+    color: slategrey;
+  }
+
+  &__percent {
+    margin: 0;
+  	padding: 0;
+  	border: 0;
+  	font-size: 100%;
+  	font: inherit;
+  	vertical-align: baseline;
+  }
+}

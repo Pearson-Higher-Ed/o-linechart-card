@@ -1,0 +1,26 @@
+{
+  "name": "o-linechart-card",
+  "version": "0.0.1",
+  "description": "sample assignment linechart",
+  "homepage": "https://github.com/Pearson-Higher-Ed/o-linechart-card",
+  "authors": [
+    "Winn",
+    "Rich <richard.winn@pearson.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "o-card": "~1.0.1"
+  },
+  "main": [
+    "main.scss",
+    "main.js"
+  ],
+  "private": true
+}

@@ -1,0 +1,13 @@
+////
+/// @group o-linechartcard
+/// @link http://registry.origami.ft.com/components/o-linechartcard
+////
+
+/// Hello world
+///
+/// @param {String} $who [world]
+@mixin oLineChartCardHello($who: world) {
+	.foo {
+		content: 'Hello, #{$who}!';
+	}
+}
